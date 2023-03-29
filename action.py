@@ -53,7 +53,7 @@ def is_holiday(date):
 def execute(event):
     """
     Your custom implementation here.
-    Code below is just an example
+    Code below is just an example.
     """
 
     url = "https://example.com/do"
@@ -81,4 +81,7 @@ def execute(event):
 
 
 def random_int():
+    """
+    Random int for the workflow to sleep (in second).
+    """
     return str(random.randint(1, 7200))
