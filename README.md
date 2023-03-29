@@ -11,7 +11,7 @@ The idea behind this project is to create a system that can execute HTTP request
 ## Stack & Architecture
 The system uses Google Cloud Services for its cost-effective nature and powerful features:
 
-1. Cloud Functions (Action): The action.py file contains a Google Cloud Function that processes incoming HTTP requests and performs the specified action. Actions include generating a random integer and executing custom code based on the action parameter.
+1. Cloud Functions (Action): The `action.py` file contains a Google Cloud Function that processes incoming HTTP requests and performs the specified action. Actions include generating a random integer and executing custom code based on the action parameter.
 
 2. Workflows: The workflow defines the steps to be executed, such as fetching a random sleep time, waiting for the specified duration, and finally executing the action. Workflow is pay-per-execution step, meaning that the cost is only incurred when the workflow is actively performing a step. Sleep time within the workflow does not contribute to the cost.
 
