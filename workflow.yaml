@@ -1,0 +1,31 @@
+main:
+    params: [args]
+    steps:
+    - getSleepTime:
+        call: http.post
+        args:
+            url: https://the.google.action.url
+            body: {
+                action: "random"
+            }
+            auth:
+                type: OIDC
+        result: sleepTime
+    - sleep:
+        call: sys.sleep
+        args:
+            seconds: ${int(sleepTime.body)}
+    - execute:
+        call: http.post
+        args:
+            url: https://the.google.action.url
+            headers:
+                Content-type: "application/json; charset=utf-8"
+            body: {
+                action: "${args.action}"
+            }
+            auth:
+                type: OIDC
+        result: res
+    - returnOutput:
+            return: ${res.body}

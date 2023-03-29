@@ -1,0 +1,5 @@
+schedules:
+  - frequency: "0 9 * * 1-5"
+    workflow_arguments: {"action": "baz"}
+  - frequency: "0 18 * * 1-5"
+    workflow_arguments: { "action": "qux" }
